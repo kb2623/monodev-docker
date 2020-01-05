@@ -15,7 +15,7 @@ build:
 	docker build -t ${DOCKER_NAME}-image:${DOCKER_TAG} .
 
 run:
-	docker run -ti --name ${DOCKER_NAME}:${DOCKER_TAG} \
+	docker run -ti --name ${DOCKER_NAME}-${DOCKER_TAG} \
 		-e DISPLAY=${DISPLAY} \
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
 		-v ${DOCKER_VOLUME_SRC}:/mnt/data \
@@ -23,14 +23,14 @@ run:
 		${DOCKER_NAME}-image:${DOCKER_TAG}
 
 start:
-	docker start ${DOCKER_NAME}:${DOCKER_TAG}
+	docker start ${DOCKER_NAME}-${DOCKER_TAG}
 
 stop:
-	docker stop ${DOCKER_NAME}:${DOCKER_TAG}
+	docker stop ${DOCKER_NAME}-${DOCKER_TAG}
 
 remove:
 	-make stop
-	docker container rm ${DOCKER_NAME}:${DOCKER_TAG}
+	docker container rm ${DOCKER_NAME}-${DOCKER_TAG}
 
 clean:
 	-make remove
