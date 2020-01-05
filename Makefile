@@ -34,6 +34,7 @@ run:
 
 start:
 	docker start ${DOCKER_NAME}-${DOCKER_TAG}
+	docker exec -ti ${DOCKER_NAME}-${DOCKER_TAG} /bin/bash
 
 stop:
 	docker stop ${DOCKER_NAME}-${DOCKER_TAG}
