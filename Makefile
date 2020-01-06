@@ -26,10 +26,11 @@ build:
 
 run:
 	docker run -ti --rm \
-		-e DISPLAY=${DISPLAY} \
-		-v /tmp/.X11-unix:/tmp/.X11-unix \
+		-e DISPLAY \
+		-v /tmp/.X11-unix:/tmp/.X11-unix:rw \
 		-v ${DOCKER_VOLUME_SRC}:/mnt/data \
 		--device /dev/dri \
+		--device /dev/snd \
 		--hostname=${DOCKER_NAME} \
 		--net=host \
 		${DOCKER_NAME}-image:${DOCKER_TAG}
