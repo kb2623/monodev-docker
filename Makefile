@@ -25,24 +25,14 @@ build:
 		-t ${DOCKER_NAME}-image:${DOCKER_TAG} .
 
 run:
-	docker run -ti --name ${DOCKER_NAME}-${DOCKER_TAG} \
+	docker run -ti --rm \
 		-e DISPLAY=${DISPLAY} \
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
 		-v ${DOCKER_VOLUME_SRC}:/mnt/data \
-		--hostname=${DOCKER_NAME}:${DOCKER_TAG} \
+		--device /dev/dri \
+		--hostname=${DOCKER_NAME} \
+		--net=host \
 		${DOCKER_NAME}-image:${DOCKER_TAG}
 
-start:
-	docker start ${DOCKER_NAME}-${DOCKER_TAG}
-	docker exec -ti ${DOCKER_NAME}-${DOCKER_TAG} /bin/bash
-
-stop:
-	docker stop ${DOCKER_NAME}-${DOCKER_TAG}
-
-remove:
-	-make stop
-	docker container rm ${DOCKER_NAME}-${DOCKER_TAG}
-
 clean:
-	-make remove
-	docker image rm ${DOCKER_NAME}=image:${DOCKER_TAG}
+	docker image rm ${DOCKER_NAME}-image:${DOCKER_TAG}

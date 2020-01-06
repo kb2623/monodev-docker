@@ -15,10 +15,9 @@ RUN apt update \
  && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF \
  && echo "deb https://download.mono-project.com/repo/debian vs-buster main" | tee /etc/apt/sources.list.d/mono-official-vs.list \
  && apt update \
- && apt install -y git vim-gtk3 bash curl tmux mono-complete monodevelop universal-ctags \
+ && apt install -y git vim-gtk3 bash curl tmux mono-complete monodevelop nuget universal-ctags fonts-firacode \
  && apt autoremove \
  && apt clean
-RUN curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
 # Make skel dir ################################################################################################################
 USER root
@@ -28,8 +27,7 @@ SHELL ["/bin/bash", "-c"]
 ADD .vimrc .
 ADD .bashrc .
 ADD .tmux.conf .
-RUN git clone https://github.com/chris-marsh/pureline.git .config/pureline \
- && curl -fLo .vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+RUN curl -fLo .vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Create a user ##################################################################################################################
 USER root
