@@ -25,8 +25,9 @@ build:
 		-t ${DOCKER_NAME}-image:${DOCKER_TAG} .
 
 run:
+	xhost +
 	docker run -ti --rm \
-		-e DISPLAY \
+		-e DISPLAY=${DISPLAY} \
 		-v /tmp/.X11-unix:/tmp/.X11-unix:rw \
 		-v ${DOCKER_VOLUME_SRC}:/mnt/data \
 		--device /dev/dri \
