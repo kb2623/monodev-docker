@@ -24,8 +24,10 @@ build:
 		--build-arg AGROUP_ID=${DOCKER_GROUP_ID} \
 		-t ${DOCKER_NAME}-image:${DOCKER_TAG} .
 
-run:
+xorgHosts:
 	xhost +
+
+run:
 	docker run -ti --rm \
 		-e DISPLAY=${DISPLAY} \
 		-v /tmp/.X11-unix:/tmp/.X11-unix:rw \
