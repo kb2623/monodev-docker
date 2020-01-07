@@ -11,6 +11,7 @@ all: build run
 
 volume:
 	mkdir -p ${DOCKER_VOLUME_SRC}
+	cp -r MyApp ${DOCKER_VOLUME_SRC}
 	chown -R ${DOCKER_USER_ID}:${DOCKER_GROUP_ID} ${DOCKER_VOLUME_SRC}
 
 clean_volume: ${DOCKER_VOLUME_SRC}
