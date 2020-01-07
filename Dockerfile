@@ -43,14 +43,6 @@ RUN mkdir -p /mnt/data \
  && ln -s /mnt/data $AHOME/data \
  && chown $AUSER:$AGROUP $AHOME/data
 
-# Install designer for Windows forms ##############################################################################################
-USER $AUSER
-WORKDIR $AHOME
-
-RUN git clone https://github.com/mono/mwf-designer.git \
- && cd mwf-designer \
- && make mono-design
-
 # ENTRYPOINT #####################################################################################################################
 USER $AUSER
 WORKDIR $AHOME
