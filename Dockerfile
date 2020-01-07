@@ -6,6 +6,9 @@ ARG AGROUP=musers
 ARG AGROUP_ID=1001
 ARG AHOME=/home/$AUSER
 
+ENV CXX=clang++
+ENV CC=clang
+
 # Install programs ############################################################################################################
 USER root
 WORKDIR /root
