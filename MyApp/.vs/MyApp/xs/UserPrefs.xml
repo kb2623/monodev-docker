@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{8732BAC5-E598-477A-92B6-F9336D054A16}|Default">
+  <MonoDevelop.Ide.ItemProperties.MyApp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyApp/MyApp.cs">
+    <Files>
+      <File FileName="MyApp/MyApp.cs" Line="73" Column="30" />
+      <File FileName="../../data/Projects/vaja/vaja/MyApplication.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MyApp" expanded="True">
+            <Node name="MyApp" expanded="True">
+              <Node name="References" expanded="True" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State name="__root__">
+          <Node name="MyApp" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
