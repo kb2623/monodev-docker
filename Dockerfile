@@ -11,7 +11,7 @@ ENV CC=clang
 
 # Install programs ############################################################################################################
 RUN apt update \
- && apt install --no-install-recommends -y dirmngr ca-certificates vim-gtk3 git bash curl tmux universal-ctags fonts-firacode llvm gdb make gnupg \
+ && apt install --no-install-recommends -y dirmngr ca-certificates vim-gtk3 git bash curl tmux universal-ctags fonts-firacode llvm gdb make gnupg unrar-free unzip \
  && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF \
  && echo "deb https://download.mono-project.com/repo/debian vs-buster main" | tee /etc/apt/sources.list.d/mono-official-vs.list \
  && apt update \
