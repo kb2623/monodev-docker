@@ -35,7 +35,7 @@ set t_Co=256
 set backupdir=/tmp
 set directory=/tmp
 set mouse=a
-set shell=/bin/zsh
+set shell=/bin/bash
 set encoding=UTF-8
 
 let g:airline#extensions#tabline#enabled=1
