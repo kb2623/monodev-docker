@@ -61,4 +61,12 @@ ex() {
 }
 
 # prompt
-PS1='[\[\e[32m\]\u\[\e[m\]@\[\e[32m\]\h\[\e[m\]]:[\d \t]-[\[\e[33m\]\w\[\e[m\]]\n\$ '
+if [[ "$TERM" != "linux" ]]; then
+	source ~/.config/pureline/pureline ~/.config/pureline/configs/powerline_full_256col.conf
+elif [[ -n $SSH_CONNECTION ]]; then
+	source ~/.config/pureline/pureline ~/.config/pureline/configs/powerline_full_8col.conf
+elif [[ "$TERM" = "linux" ]]; then
+	source ~/.config/pureline/pureline ~/.config/pureline/configs/tty_full.conf
+else
+	PS1='[\[\e[32m\]\u\[\e[m\]@\[\e[32m\]\h\[\e[m\]]-[\[\e[33m\]\w\[\e[m\]]\\$\n> '
+fi

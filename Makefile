@@ -3,6 +3,7 @@ DOCKER_VOLUME_SRC=/tmp/${DOCKER_NAME}-buster
 # User data
 DOCKER_USER:=muser
 DOCKER_USER_ID:=1001
+DOCKER_USER_PASSWORD:=test1234
 DOCKER_GROUP:=musers
 DOCKER_GROUP_ID:=1001
 
@@ -20,6 +21,7 @@ build:
 	docker build \
 		--build-arg AUSER=${DOCKER_USER} \
 		--build-arg AUSER_ID=${DOCKER_USER_ID} \
+		--build-arg AUSER_PASSWORD=${DOCKER_USER_PASSWORD} \
 		--build-arg AGROUP=${DOCKER_GROUP} \
 		--build-arg AGROUP_ID=${DOCKER_GROUP_ID} \
 		-t ${DOCKER_NAME}:buster .
