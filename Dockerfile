@@ -31,6 +31,7 @@ RUN groupadd -f --gid $AGROUP_ID $AGROUP \
  && useradd --uid $AUSER_ID --groups $AGROUP --shell /bin/bash --create-home --skel /etc/skel --home-dir $AHOME --password $(openssl passwd -1 $AUSER_PASSWORD) $AUSER 
 RUN mkdir -p /mnt/data \
  && chown -R $AUSER:$AGROUP /mnt/data \
+ && chmod 777 /mnt/data \
  && ln -s /mnt/data $AHOME/data \
  && chown -R $AUSER:$AGROUP $AHOME/data
 
