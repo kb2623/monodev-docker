@@ -38,6 +38,7 @@ run: xorgHosts
 		--device /dev/snd \
 		--hostname=${DOCKER_NAME}-buster \
 		--net=host \
+		--name=${DOCKER_NAME} \
 		${DOCKER_NAME}:buster
 
 clean:
